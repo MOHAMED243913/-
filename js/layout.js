@@ -1,14 +1,34 @@
 /* Builds the shared header, footer and floating widgets on every page */
 const NAV_LINKS = [
   { href: 'index.html', key: 'home', label: 'الرئيسية' },
-  { href: 'products.html', key: 'products', label: 'المتجر' },
+  { href: 'products.html', key: 'products', label: 'المتجر' }
+];
+const NAV_LINKS_AFTER = [
   { href: 'about.html', key: 'about', label: 'من نحن' },
+  { href: 'faq.html', key: 'faq', label: 'الأسئلة الشائعة' },
   { href: 'contact.html', key: 'contact', label: 'اتصل بنا' }
+];
+const SERVICE_NAV_ITEMS = [
+  { href: 'service.html?key=home', label: 'تكييف منزلي' },
+  { href: 'service.html?key=central', label: 'تكييف مركزي وتجاري' },
+  { href: 'service.html?key=cooling', label: 'تبريد تجاري وصناعي' },
+  { href: 'service.html?key=maintenance', label: 'صيانة وقطع غيار' }
 ];
 
 function renderHeader(active) {
-  const desktopLinks = NAV_LINKS.map(l => `<li><a href="${l.href}" class="${l.key === active ? 'active' : ''}">${l.label}</a></li>`).join('');
-  const mobileLinks = NAV_LINKS.map(l => `<li><a href="${l.href}" class="${l.key === active ? 'active' : ''}">${l.label}</a></li>`).join('');
+  const link = l => `<li><a href="${l.href}" class="${l.key === active ? 'active' : ''}">${l.label}</a></li>`;
+  const desktopLinks = NAV_LINKS.map(link).join('') + `
+    <li class="nav-dropdown">
+      <a href="javascript:void(0)" class="${active === 'services' ? 'active' : ''}">خدماتنا ${Icon('chevronDown', 'chevron')}</a>
+      <ul class="dropdown-menu">
+        ${SERVICE_NAV_ITEMS.map(s => `<li><a href="${s.href}">${s.label}</a></li>`).join('')}
+      </ul>
+    </li>` + NAV_LINKS_AFTER.map(link).join('');
+
+  const mobileLinks = NAV_LINKS.map(link).join('') +
+    `<li class="mobile-nav-subhead">خدماتنا</li>` +
+    SERVICE_NAV_ITEMS.map(s => `<li><a href="${s.href}" class="mobile-sub-link">${s.label}</a></li>`).join('') +
+    NAV_LINKS_AFTER.map(link).join('');
 
   return `
   <header class="site-header">
@@ -36,6 +56,10 @@ function renderHeader(active) {
       <ul class="nav-links">${desktopLinks}</ul>
 
       <div class="nav-actions">
+        <a href="wishlist.html" class="icon-btn" aria-label="المفضلة">
+          ${Icon('heart')}
+          <span class="cart-count wishlist-count">0</span>
+        </a>
         <button class="icon-btn" id="cartToggle" aria-label="سلة المشتريات">
           ${Icon('cart')}
           <span class="cart-count">0</span>
@@ -52,7 +76,8 @@ function renderHeader(active) {
       <button class="cart-close" id="mobileNavClose">${Icon('close')}</button>
     </div>
     <ul>${mobileLinks}</ul>
-    <a href="products.html" class="btn btn-primary btn-block">تسوق الآن</a>
+    <a href="wishlist.html" class="btn btn-outline-dark btn-block" style="margin-top:10px;">${Icon('heart')} المفضلة <span class="cart-count wishlist-count" style="position:static; margin-inline-start:4px;"></span></a>
+    <a href="products.html" class="btn btn-primary btn-block" style="margin-top:10px;">تسوق الآن</a>
   </aside>`;
 }
 
@@ -79,16 +104,17 @@ function renderFooter() {
           <li><a href="index.html">الرئيسية</a></li>
           <li><a href="products.html">المتجر</a></li>
           <li><a href="about.html">من نحن</a></li>
+          <li><a href="faq.html">الأسئلة الشائعة</a></li>
           <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>أقسام المتجر</h4>
+        <h4>خدماتنا</h4>
         <ul>
-          <li><a href="products.html?cat=home">تكييف منزلي</a></li>
-          <li><a href="products.html?cat=central">تكييف مركزي وتجاري</a></li>
-          <li><a href="products.html?cat=cooling">تبريد تجاري وصناعي</a></li>
-          <li><a href="products.html?cat=parts">قطع غيار وملحقات</a></li>
+          <li><a href="service.html?key=home">تكييف منزلي</a></li>
+          <li><a href="service.html?key=central">تكييف مركزي وتجاري</a></li>
+          <li><a href="service.html?key=cooling">تبريد تجاري وصناعي</a></li>
+          <li><a href="service.html?key=maintenance">صيانة وقطع غيار</a></li>
         </ul>
       </div>
       <div class="footer-col">

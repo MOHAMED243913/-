@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>تفاصيل المنتج | صبرة لأنظمة التبريد</title>
+<meta name="description" content="تفاصيل ومواصفات المنتج - متجر صبرة لأنظمة التبريد.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2222%22>%E2%9D%84%EF%B8%8F</text></svg>">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<section style="padding-bottom:90px;">
+  <div class="container">
+    <div class="breadcrumb-bar" id="breadcrumb"></div>
+    <div class="pd-layout" id="productDetail"></div>
+
+    <div id="relatedSection">
+      <div class="pd-related-head">
+        <h2>منتجات ذات صلة</h2>
+      </div>
+      <div class="products-grid grid-3col" id="relatedProducts"></div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div id="site-widgets"></div>
+
+<script src="js/icons.js"></script>
+<script src="js/products-data.js"></script>
+<script src="js/layout.js"></script>
+<script>mountLayout('products');</script>
+<script src="js/main.js"></script>
+<script src="js/product-detail.js"></script>
+</body>
+</html>

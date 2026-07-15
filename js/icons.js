@@ -38,7 +38,10 @@ const ICONS = {
   award: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5.5"/><path d="M8.5 12.5L7 21l5-2.5 5 2.5-1.5-8.5"/></svg>',
   bolt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>',
   arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
-  cog: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a1.7 1.7 0 000-3l1.3-1.6-2-2-1.7 1a1.7 1.7 0 00-3-1.2L13.5 4.6h-3l-.5 2.1a1.7 1.7 0 00-3 1.3l-1.6-1-2 2 1 1.7a1.7 1.7 0 00-1.2 3L4.6 13.5v3l2.1.5a1.7 1.7 0 001.3 3l-1 1.6 2 2 1.7-1a1.7 1.7 0 003 1.2l.5 2.1h3l.5-2.1a1.7 1.7 0 003-1.3l1.6 1 2-2-1-1.7a1.7 1.7 0 001.2-3l2.1-.5v-3z"/></svg>'
+  cog: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 13.5a1.7 1.7 0 000-3l1.3-1.6-2-2-1.7 1a1.7 1.7 0 00-3-1.2L13.5 4.6h-3l-.5 2.1a1.7 1.7 0 00-3 1.3l-1.6-1-2 2 1 1.7a1.7 1.7 0 00-1.2 3L4.6 13.5v3l2.1.5a1.7 1.7 0 001.3 3l-1 1.6 2 2 1.7-1a1.7 1.7 0 003 1.2l.5 2.1h3l.5-2.1a1.7 1.7 0 003-1.3l1.6 1 2-2-1-1.7a1.7 1.7 0 001.2-3l2.1-.5v-3z"/></svg>',
+  chevronDown: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>',
+  minus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg>',
+  plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>'
 };
 
 function Icon(name, cls) {

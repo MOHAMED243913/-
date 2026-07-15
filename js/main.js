@@ -67,6 +67,16 @@ function toggleWishlist(id) {
   else list.push(id);
   saveWishlist(list);
   document.querySelectorAll(`[data-wishlist="${id}"]`).forEach(btn => btn.classList.toggle('active'));
+  updateWishlistUI();
+  document.dispatchEvent(new CustomEvent('wishlist:change'));
+}
+
+function updateWishlistUI() {
+  document.querySelectorAll('.wishlist-count').forEach(el => {
+    const count = loadWishlist().length;
+    el.textContent = count;
+    el.style.display = count > 0 ? 'flex' : 'none';
+  });
 }
 
 /* ---------- Rendering helpers ---------- */
@@ -84,14 +94,14 @@ function productCardHTML(p) {
   const badge = p.badge ? `<span class="product-badge">${p.badge}</span>` : (!p.inStock ? `<span class="product-badge stock-out">غير متوفر</span>` : '');
   return `
   <article class="product-card" data-id="${p.id}" data-cat="${p.category}" data-price="${p.price}" data-name="${p.name}">
-    <div class="product-media" style="background:${p.grad}">
+    <a href="product.html?id=${p.id}" class="product-media" style="background:${p.grad}">
       ${badge}
-      <button class="wishlist-btn ${wishActive}" data-wishlist="${p.id}" onclick="toggleWishlist('${p.id}')" aria-label="إضافة للمفضلة">${Icon('heart')}</button>
+      <button class="wishlist-btn ${wishActive}" data-wishlist="${p.id}" onclick="event.preventDefault(); toggleWishlist('${p.id}')" aria-label="إضافة للمفضلة">${Icon('heart')}</button>
       <div style="color:#0a5c8a">${Icon(p.icon)}</div>
-    </div>
+    </a>
     <div class="product-body">
       <div class="product-cat">${getCategoryLabel(p.category)}</div>
-      <h3>${p.name}</h3>
+      <h3><a href="product.html?id=${p.id}">${p.name}</a></h3>
       <div class="product-rating">${renderStars(p.rating)}<span>(${p.reviews})</span></div>
       <p class="product-desc">${p.desc}</p>
       <div class="product-footer">
@@ -210,6 +220,7 @@ function hydrateIcons(root) {
 document.addEventListener('DOMContentLoaded', () => {
   hydrateIcons();
   updateCartUI();
+  updateWishlistUI();
 
   const cartBtn = document.getElementById('cartToggle');
   if (cartBtn) cartBtn.addEventListener('click', openCart);

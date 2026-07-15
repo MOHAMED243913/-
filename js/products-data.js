@@ -20,7 +20,14 @@ const PRODUCTS = [
     icon: 'ac',
     grad: 'linear-gradient(135deg,#e6f4fb,#cdeaf8)',
     featured: true,
-    inStock: true
+    inStock: true,
+    specs: [
+      { label: 'القدرة', value: '1.5 حصان' },
+      { label: 'النوع', value: 'إنفرتر' },
+      { label: 'استهلاك الطاقة', value: 'موفر حتى 60%' },
+      { label: 'الضمان', value: '5 سنوات على الكمبروسر' },
+      { label: 'مستوى الصوت', value: 'هادئ - أقل من 24 ديسيبل' }
+    ]
   },
   {
     id: 'p2',
@@ -33,7 +40,14 @@ const PRODUCTS = [
     icon: 'ac',
     grad: 'linear-gradient(135deg,#eef6fb,#d8ecf6)',
     featured: false,
-    inStock: true
+    inStock: true,
+    specs: [
+      { label: 'القدرة', value: '2.25 حصان' },
+      { label: 'النوع', value: 'عادي (غير إنفرتر)' },
+      { label: 'الفلتر', value: 'مضاد للبكتيريا' },
+      { label: 'الضمان', value: 'سنتان شاملتان' },
+      { label: 'يناسب مساحة', value: 'حتى 25 متر مربع' }
+    ]
   },
   {
     id: 'p3',
@@ -46,7 +60,14 @@ const PRODUCTS = [
     icon: 'window',
     grad: 'linear-gradient(135deg,#eaf5fb,#d3e9f5)',
     featured: false,
-    inStock: true
+    inStock: true,
+    specs: [
+      { label: 'القدرة', value: '1 حصان' },
+      { label: 'النوع', value: 'شباك' },
+      { label: 'التحكم', value: 'ريموت لاسلكي' },
+      { label: 'الضمان', value: 'سنة شاملة' },
+      { label: 'يناسب مساحة', value: 'حتى 15 متر مربع' }
+    ]
   },
   {
     id: 'p4',
@@ -60,7 +81,14 @@ const PRODUCTS = [
     icon: 'duct',
     grad: 'linear-gradient(135deg,#e6f1fb,#cde3f5)',
     featured: true,
-    inStock: true
+    inStock: true,
+    specs: [
+      { label: 'النوع', value: 'دكت مخفي' },
+      { label: 'القدرة', value: '5 حصان' },
+      { label: 'عدد المخارج', value: 'حتى 6 غرف' },
+      { label: 'الضمان', value: '5 سنوات على الكمبروسر' },
+      { label: 'التحكم', value: 'لوحة تحكم مركزية ذكية' }
+    ]
   },
   {
     id: 'p5',
@@ -74,7 +102,14 @@ const PRODUCTS = [
     icon: 'vrf',
     grad: 'linear-gradient(135deg,#e8f2fb,#d0e6f6)',
     featured: true,
-    inStock: true
+    inStock: true,
+    specs: [
+      { label: 'النوع', value: 'VRF متعدد المناطق' },
+      { label: 'عدد الوحدات الداخلية', value: 'حتى 12 وحدة' },
+      { label: 'كفاءة الطاقة', value: 'فئة A++' },
+      { label: 'الضمان', value: '7 سنوات على الكمبروسر' },
+      { label: 'يناسب', value: 'المباني التجارية والإدارية' }
+    ]
   },
   {
     id: 'p6',
@@ -87,7 +122,14 @@ const PRODUCTS = [
     icon: 'tower',
     grad: 'linear-gradient(135deg,#e9f3fb,#d1e7f4)',
     featured: false,
-    inStock: true
+    inStock: true,
+    specs: [
+      { label: 'النوع', value: 'برج تبريد دائري (FRP)' },
+      { label: 'السعة الحرارية', value: 'حتى 150 طن تبريد' },
+      { label: 'خامة الهيكل', value: 'فايبر جلاس مقاوم للصدأ' },
+      { label: 'الضمان', value: 'سنتان على الموتور والمروحة' },
+      { label: 'يناسب', value: 'المصانع والمنشآت الصناعية' }
+    ]
   },
   {
     id: 'p7',
@@ -100,7 +142,14 @@ const PRODUCTS = [
     icon: 'fridge',
     grad: 'linear-gradient(135deg,#eaf4fb,#d6ebf6)',
     featured: false,
-    inStock: true
+    inStock: true,
+    specs: [
+      { label: 'السعة', value: '600 لتر' },
+      { label: 'الباب', value: 'زجاجي مزدوج' },
+      { label: 'الإضاءة', value: 'LED داخلية' },
+      { label: 'درجة الحرارة', value: 'من 2° إلى 8° مئوية' },
+      { label: 'الضمان', value: 'سنتان شاملتان' }
+    ]
   },
   {
     id: 'p8',
@@ -113,7 +162,14 @@ const PRODUCTS = [
     icon: 'freezer',
     grad: 'linear-gradient(135deg,#e7f2fb,#cfe6f4)',
     featured: false,
-    inStock: false
+    inStock: false,
+    specs: [
+      { label: 'السعة', value: '500 لتر' },
+      { label: 'النوع', value: 'أفقي' },
+      { label: 'درجة الحرارة', value: 'حتى -18° مئوية' },
+      { label: 'العزل', value: 'عزل حراري عالي الكثافة' },
+      { label: 'الضمان', value: 'سنتان شاملتان' }
+    ]
   },
   {
     id: 'p9',
@@ -127,7 +183,14 @@ const PRODUCTS = [
     icon: 'coldroom',
     grad: 'linear-gradient(135deg,#e6f1fb,#cde4f4)',
     featured: false,
-    inStock: true
+    inStock: true,
+    specs: [
+      { label: 'المساحة', value: 'حسب الطلب' },
+      { label: 'العزل', value: 'بانوهات عزل 10 سم' },
+      { label: 'درجة الحرارة', value: 'من -20° إلى 8° مئوية' },
+      { label: 'التركيب', value: 'تصميم وتنفيذ كامل بالموقع' },
+      { label: 'الضمان', value: '3 سنوات على وحدات التبريد' }
+    ]
   },
   {
     id: 'p10',
@@ -140,7 +203,14 @@ const PRODUCTS = [
     icon: 'compressor',
     grad: 'linear-gradient(135deg,#eef6fb,#dbeef8)',
     featured: false,
-    inStock: true
+    inStock: true,
+    specs: [
+      { label: 'النوع', value: 'روتاري / سكرول' },
+      { label: 'التوافق', value: 'معظم موديلات المكيفات التجارية' },
+      { label: 'المنشأ', value: 'أصلي بضمان توكيل' },
+      { label: 'الضمان', value: 'سنة كاملة' },
+      { label: 'التركيب', value: 'متاح مع فني معتمد' }
+    ]
   },
   {
     id: 'p11',
@@ -153,7 +223,14 @@ const PRODUCTS = [
     icon: 'fan',
     grad: 'linear-gradient(135deg,#eaf4fb,#d5ebf7)',
     featured: false,
-    inStock: true
+    inStock: true,
+    specs: [
+      { label: 'القطر', value: '50 سم' },
+      { label: 'قوة الموتور', value: '0.5 حصان' },
+      { label: 'الاستخدام', value: 'منشآت صناعية ومخازن' },
+      { label: 'خامة الريش', value: 'ألومنيوم مقاوم للصدأ' },
+      { label: 'الضمان', value: 'سنة كاملة' }
+    ]
   },
   {
     id: 'p12',
@@ -167,13 +244,24 @@ const PRODUCTS = [
     icon: 'filter',
     grad: 'linear-gradient(135deg,#eef7fb,#dcf0f8)',
     featured: false,
-    inStock: true
+    inStock: true,
+    specs: [
+      { label: 'المحتويات', value: 'فلتر هواء + فلتر كربون' },
+      { label: 'التوافق', value: 'معظم موديلات المكيفات المنزلية' },
+      { label: 'دورة الاستبدال المقترحة', value: 'كل 6 أشهر' },
+      { label: 'المنشأ', value: 'قطع أصلية' },
+      { label: 'الضمان', value: '3 أشهر' }
+    ]
   }
 ];
 
 function getCategoryLabel(key) {
   const c = CATEGORIES.find(c => c.key === key);
   return c ? c.label : key;
+}
+
+function getProductById(id) {
+  return PRODUCTS.find(p => p.id === id);
 }
 
 function formatPrice(n) {
