@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المتجر | صبرة لأنظمة التبريد</title>
+<meta name="description" content="تصفح متجر صبرة لأنظمة التبريد - مكيفات منزلية ومركزية، أنظمة تبريد تجاري وصناعي، وقطع غيار أصلية.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><text y=%2220%22 font-size=%2222%22>%E2%9D%84%EF%B8%8F</text></svg>">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<div class="page-banner">
+  <div class="container">
+    <h1>متجر صبرة لأنظمة التبريد</h1>
+    <div class="breadcrumb"><a href="index.html">الرئيسية</a><span>/</span><span>المتجر</span></div>
+  </div>
+</div>
+
+<section style="padding:50px 0 90px;">
+  <div class="container">
+    <div class="store-layout">
+      <aside class="store-sidebar">
+        <h4>تصفية حسب الفئة</h4>
+        <div class="filter-group" id="categoryFilters"></div>
+
+        <h4>تصفية حسب السعر</h4>
+        <div class="filter-group price-range">
+          <input type="range" id="priceRange" min="0" step="500">
+          <div class="values">
+            <span>0 ج.م</span>
+            <span id="priceValue"></span>
+          </div>
+        </div>
+
+        <button class="reset-filters" id="resetFilters">إعادة ضبط الفلاتر</button>
+      </aside>
+
+      <div>
+        <div class="store-toolbar">
+          <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
+            <span data-icon="search"></span>
+          </div>
+          <div class="sort-select">
+            <select id="sortSelect">
+              <option value="default">الترتيب الافتراضي</option>
+              <option value="price-asc">السعر: من الأقل للأعلى</option>
+              <option value="price-desc">السعر: من الأعلى للأقل</option>
+              <option value="rating">الأعلى تقييمًا</option>
+            </select>
+          </div>
+        </div>
+        <div class="results-count" id="resultsCount"></div>
+        <div class="products-grid grid-3col" id="productsGrid"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" id="site-footer"></footer>
+<div id="site-widgets"></div>
+
+<script src="js/icons.js"></script>
+<script src="js/products-data.js"></script>
+<script src="js/layout.js"></script>
+<script>mountLayout('products');</script>
+<script src="js/main.js"></script>
+<script src="js/products-page.js"></script>
+</body>
+</html>
