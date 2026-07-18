@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "daftra": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "--env-file=/home/user/-/daftra-mcp-server/.env",
+        "/home/user/-/daftra-mcp-server/dist/index.js"
+      ],
+      "env": {}
+    }
+  }
+}

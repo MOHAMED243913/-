@@ -5,6 +5,14 @@
  * The base URL is the account's Daftra domain, e.g. https://mycompany.daftra.com
  */
 
+import { EnvHttpProxyAgent, setGlobalDispatcher } from "undici";
+
+// Node's fetch ignores HTTP(S)_PROXY by default; honor it when present so the
+// server works behind corporate/agent proxies.
+if (process.env.HTTPS_PROXY || process.env.HTTP_PROXY || process.env.https_proxy || process.env.http_proxy) {
+  setGlobalDispatcher(new EnvHttpProxyAgent());
+}
+
 export interface DaftraConfig {
   baseUrl: string;
   apiKey: string;
